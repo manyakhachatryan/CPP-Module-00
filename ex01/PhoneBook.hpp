@@ -6,8 +6,9 @@
 
 class PhoneBook{
     private: 
-        Contact  contact[3];
+        Contact  contact[8];
         int index;
+        int count;
     public : 
         PhoneBook();
         ~PhoneBook();

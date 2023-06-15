@@ -2,12 +2,13 @@
 PhoneBook::PhoneBook()
 {
    index = 0;
+   count = 0;
 }
 PhoneBook::~PhoneBook(){}
 
 void PhoneBook::ADD()
 {
-    if(index==3)
+    if(index==8)
     {
         index = 0;
     }
@@ -17,6 +18,10 @@ void PhoneBook::ADD()
     std::getline(std::cin, str);
     if (all_char(str) || str.length() == 0)
     {
+        if(std::cin.eof())
+        {
+            return ;
+        } 
         std::cout<<"Input is not correct , please try again "<<std::endl;
         goto label1;
     }
@@ -27,6 +32,10 @@ void PhoneBook::ADD()
     std::getline(std::cin, str);    
     if (all_char(str) || str.length() == 0)
     {
+        if(std::cin.eof())
+        {
+            return ;
+        } 
         std::cout<<"Input is not correct , please try again "<<std::endl;
         goto label2;
     }
@@ -37,6 +46,10 @@ void PhoneBook::ADD()
     std::getline(std::cin, str);
     if(str.length()==0)
     {
+        if(std::cin.eof())
+        {
+            return ;
+        } 
         std::cout<<"Input is not correct , please try again "<<std::endl;
         goto label5;
     }
@@ -47,6 +60,10 @@ void PhoneBook::ADD()
     std::getline(std::cin, str);
     if(all_digit(str) || str.length() == 0)
     {
+        if(std::cin.eof())
+        {
+            return ;
+        } 
         std::cout<<"Input is not correct , please try again "<<std::endl;
         goto label3;
     }   
@@ -56,11 +73,17 @@ void PhoneBook::ADD()
         std::getline(std::cin, str);
     if(str.length() == 0)
     {
+        if(std::cin.eof())
+        {
+            return ;
+        } 
         std::cout<<"Input is not correct , please try again "<<std::endl;
         goto label4;
     }
         contact[index].set_darkest_secret(str);
         index++;
+        count++;
+       
 }
 
 void PhoneBook::print_part_str(std::string str)
@@ -89,7 +112,7 @@ void PhoneBook::SEARCH()
     int i = 0;
     int true_len = 10;
     int smt = 0;
-    while(contact[i].get_first_name() != "")
+    while((contact[i].get_first_name()).length() !=0)
     { 
         std::cout<<"         ";
         std::cout<<i;
@@ -131,7 +154,7 @@ void PhoneBook::SEARCH()
     if(a.length() == 1 && a[0]>='0' && a[0] <= '7')
     {
     int x = atoi(a.c_str());
-    if(x>=0 && x<=7 && contact[x].get_first_name() != "")
+    if(x>=0 && x<=7 && x<count)
     {
     std::cout<<contact[x].get_first_name()<<std::endl;
     std::cout<<contact[x].get_last_name()<<std::endl;
@@ -144,6 +167,10 @@ void PhoneBook::SEARCH()
     } else {
       std::cout<<"invalid index"<<std::endl;
     }
+    if(std::cin.eof())
+        {
+            return ;
+        }   
     //std::string str;
     // std::cout<<"Please input index"<<std::endl;
     // std::getline(std::cin, str);
