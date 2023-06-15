@@ -20,7 +20,6 @@ int PhoneBook::all_char(std::string str)
     {
         if (!(isalpha(str[i])))
        {
-            std::cout<<"Input is not correct , please try again "<<std::endl;
             return 1;
        }
     }

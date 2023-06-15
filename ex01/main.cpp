@@ -11,7 +11,6 @@ int main()
         std::getline(std::cin, str);
         if(str.compare("ADD")==0){
           PhoneBook1.ADD();
-          std::cout<<1<<std::endl;
         } else if(str.compare("SEARCH")==0){
             PhoneBook1.SEARCH();
         } else if(str.compare("EXIT")==0){

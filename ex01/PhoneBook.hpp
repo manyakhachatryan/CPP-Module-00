@@ -6,7 +6,7 @@
 
 class PhoneBook{
     private: 
-        Contact  contact[8];
+        Contact  contact[3];
         int index;
     public : 
         PhoneBook();
@@ -15,6 +15,9 @@ class PhoneBook{
         void SEARCH();
         int all_digit(std::string str);
         int all_char(std::string str);
+        void print_space(int len);
+        void print_part_str(std::string str);
+
 };
 
 #endif
