@@ -1,8 +1,8 @@
 #include "Contact.hpp"
+
 Contact::Contact(){}
 Contact::~Contact(){}
 
-//getters
 std::string Contact::get_first_name()
 {
     return  first_name;
@@ -27,8 +27,6 @@ std::string Contact::get_darkest_secret()
 {
     return  darkest_secret;
 }
-
-// setters
 
 void Contact::set_first_name(std::string str)
 {

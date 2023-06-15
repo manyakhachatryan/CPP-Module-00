@@ -1,4 +1,5 @@
 #include "PhoneBook.hpp"
+
 PhoneBook::PhoneBook()
 {
    index = 0;
@@ -82,8 +83,7 @@ void PhoneBook::ADD()
     }
         contact[index].set_darkest_secret(str);
         index++;
-        count++;
-       
+        count++;   
 }
 
 void PhoneBook::print_part_str(std::string str)
@@ -153,27 +153,28 @@ void PhoneBook::SEARCH()
     std::getline(std::cin, a);
     if(a.length() == 1 && a[0]>='0' && a[0] <= '7')
     {
-    int x = atoi(a.c_str());
-    if(x>=0 && x<=7 && x<count)
+        int x = atoi(a.c_str());
+        if(x>=0 && x<=7 && x<count)
+        {
+            std::cout<<contact[x].get_first_name()<<std::endl;
+            std::cout<<contact[x].get_last_name()<<std::endl;
+            std::cout<<contact[x].get_nickname()<<std::endl;
+            std::cout<<contact[x].get_phone_number()<<std::endl;
+            std::cout<<contact[x].get_darkest_secret()<<std::endl;
+        }  
+        else 
+        {
+            std::cout<<"This contact does not exist "<<std::endl;
+        }
+    } 
+    else 
     {
-    std::cout<<contact[x].get_first_name()<<std::endl;
-    std::cout<<contact[x].get_last_name()<<std::endl;
-    std::cout<<contact[x].get_nickname()<<std::endl;
-    std::cout<<contact[x].get_phone_number()<<std::endl;
-    std::cout<<contact[x].get_darkest_secret()<<std::endl;
-    }  else {
-         std::cout<<"This contact does not exist "<<std::endl;
-    }
-    } else {
       std::cout<<"invalid index"<<std::endl;
     }
     if(std::cin.eof())
-        {
+    {
             return ;
-        }   
-    //std::string str;
-    // std::cout<<"Please input index"<<std::endl;
-    // std::getline(std::cin, str);
+    }   
 }
 
 

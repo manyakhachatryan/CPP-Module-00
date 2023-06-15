@@ -1,9 +1,9 @@
 #include "PhoneBook.hpp"
 
-
 int PhoneBook::all_digit(std::string str)
 {
-    for (int i = 0; i < str.length(); i++)
+    int size = str.length();
+    for (int i = 0; i < size; i++)
     {
        if (!(isdigit(str[i])))
        {
@@ -16,7 +16,8 @@ int PhoneBook::all_digit(std::string str)
 
 int PhoneBook::all_char(std::string str)
 {
-    for (int i = 0; i < str.length(); i++)
+    int size = str.length();
+    for (int i = 0; i <size; i++)
     {
         if (!(isalpha(str[i])))
        {

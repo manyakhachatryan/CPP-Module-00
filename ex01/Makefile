@@ -1,7 +1,7 @@
 NAME		= phonebook
 SRCS		= Contact.cpp main.cpp PhoneBook.cpp my_functions.cpp
 OBJS		= $(SRCS:.cpp=.o)
-CFLAGS		= -Wall -Wextra -Werror -std=c++98
+CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 CPP			= c++
 RM			= rm -f
 
@@ -9,7 +9,7 @@ all: $(NAME)
 
 $(NAME) : $(OBJS)
 		@echo  "\n\t\t🤹 Compiling $(NAME)... \n" 
-		$(CPP) $(CFLAGS) $(OBJS) -o $(NAME)
+		$(CPP) $(CXXFLAGS) $(OBJS) -o $(NAME)
 		@echo "\n\t\t😱 Compiled   $(NAME)\n"
 
 clean	:
