@@ -5,10 +5,6 @@
 #include <iostream>
 
 class PhoneBook{
-    private: 
-        Contact  contact[8];
-        int index;
-        int count;
     public : 
         PhoneBook();
         ~PhoneBook();
@@ -18,6 +14,10 @@ class PhoneBook{
         int all_char(std::string str);
         void print_space(int len);
         void print_part_str(std::string str);
+    private: 
+        Contact  contact[8];
+        int index;
+        int count;
 
 };
 

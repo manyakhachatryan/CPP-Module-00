@@ -6,8 +6,8 @@ int main()
     std::string str;
     while(1)
     {
-    std::cout<<"please choose commands"<<std::endl;
-    std::cout<<"ADD    SEARCH    EXIT "<<std::endl;
+    std::cout<<"► Please enter one of the following commands ◀︎"<<std::endl;
+    std::cout<<"∙ADD    ∙SEARCH    ∙EXIT "<<std::endl;
         std::getline(std::cin, str);
         if(str.compare("ADD")==0)
         {

@@ -7,7 +7,6 @@ int PhoneBook::all_digit(std::string str)
     {
        if (!(isdigit(str[i])))
        {
-            std::cout<<"please input valid number"<<std::endl;
             return 1;
        }
     }
