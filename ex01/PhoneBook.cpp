@@ -111,7 +111,7 @@ void PhoneBook::SEARCH()
     int i = 0;
     int true_len = 10;
     int smt = 0;
-    while((contact[i].get_first_name()).length() !=0)
+    while(i<8 && i<count)
     { 
         std::cout<<"         ";
         std::cout<<i;
@@ -146,34 +146,40 @@ void PhoneBook::SEARCH()
            std::cout<<std::endl;
         i++;
     }
-
-    std::cout<<"► Search by index"<<std::endl;
-    std::string a;
-    std::getline(std::cin, a);
-    if(a.length() == 1 && a[0]>='0' && a[0] <= '7')
+    if(count == 0)
     {
-        int x = atoi(a.c_str());
-        if(x>=0 && x<=7 && x<count)
-        {
-            std::cout<<"First name     : "<<contact[x].get_first_name()<<std::endl;
-            std::cout<<"Last name      : "<<contact[x].get_last_name()<<std::endl;
-            std::cout<<"Nickname       : "<<contact[x].get_nickname()<<std::endl;
-            std::cout<<"Phone number   : "<<contact[x].get_phone_number()<<std::endl;
-            std::cout<<"Darkest secret : "<<contact[x].get_darkest_secret()<<std::endl;
-        }  
-        else 
-        {
-            std::cout<<"✘ This contact does not exist "<<std::endl;
-        }
-    } 
+       std::cout<<"✘ You dont have contacts"<<std::endl; 
+    }
     else 
     {
-      std::cout<<"✘ Invalid index"<<std::endl;
+        std::cout<<"► Search by index"<<std::endl;
+        std::string a;
+        std::getline(std::cin, a);
+        if(a.length() == 1 && a[0]>='0' && a[0] <= '7')
+        {
+            int x = atoi(a.c_str());
+            if(x>=0 && x<=7 && x<count)
+            {
+                std::cout<<"First name     : "<<contact[x].get_first_name()<<std::endl;
+                std::cout<<"Last name      : "<<contact[x].get_last_name()<<std::endl;
+                std::cout<<"Nickname       : "<<contact[x].get_nickname()<<std::endl;
+                std::cout<<"Phone number   : "<<contact[x].get_phone_number()<<std::endl;
+                std::cout<<"Darkest secret : "<<contact[x].get_darkest_secret()<<std::endl;
+            }  
+            else 
+            {
+                std::cout<<"✘ This contact does not exist "<<std::endl;
+            }
+        } 
+        else 
+        {
+        std::cout<<"✘ Invalid index"<<std::endl;
+        }
+        if(std::cin.eof())
+        {
+                return ;
+        }   
     }
-    if(std::cin.eof())
-    {
-            return ;
-    }   
 }
 
 
